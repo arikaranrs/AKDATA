@@ -5,7 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "akdata"
 version = "1.0.0"
-description = "Enterprise-grade intelligent data preprocessing framework for machine learning."
+description = "An enterprise-grade, production-quality Python library for intelligent data preprocessing."
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
 
 authors = [
     { name = "Arikaran R", email = "arikaranr2410@gmail.com" }
@@ -13,23 +15,17 @@ authors = [
 
 license = { file = "LICENSE" }
 
-readme = "README.md"
-
-requires-python = ">=3.10,<3.14"
-]
-
-description = "An enterprise-grade, production-quality Python library for intelligent data preprocessing."
-readme = "README.md"
-requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
+
 dependencies = [
     "pandas>=1.5.0",
     "numpy>=1.22.0",
@@ -39,8 +35,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-pdf = ["reportlab>=3.6.0"]
-test = ["pytest>=7.0.0"]
+pdf = [
+    "reportlab>=3.6.0"
+]
+
+test = [
+    "pytest>=7.0.0"
+]
 
 [tool.setuptools.packages.find]
 where = ["."]
