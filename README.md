@@ -21,39 +21,97 @@ Designed to prevent common machine learning bugs, prevent data leakage, and auto
 
 ---
 
-## Installation
+## Why AKDATA?
 
-```bash
-pip install akdata
-```
+Machine Learning projects spend a significant portion of development time preparing and cleaning data before model training.
 
-To include PDF export features:
-```bash
-pip install akdata[pdf]
+AKDATA automates this process while maintaining transparency, reproducibility, and machine learning best practices.
+
+Instead of manually writing preprocessing code for every dataset, developers can prepare datasets using a single, consistent workflow.
+
+---
+
+## AKDATA Workflow
+
+```text
+Raw Dataset
+      │
+      ▼
+Data Loading
+      │
+      ▼
+Exploratory Data Analysis (EDA)
+      │
+      ▼
+Dataset Profiling
+      │
+      ▼
+Dataset Health Score
+      │
+      ▼
+Data Cleaning
+      │
+      ▼
+Missing Value Handling
+      │
+      ▼
+Duplicate Removal
+      │
+      ▼
+Outlier Detection
+      │
+      ▼
+Data Type Conversion
+      │
+      ▼
+Categorical Encoding
+      │
+      ▼
+Feature Engineering
+      │
+      ▼
+Feature Selection
+      │
+      ▼
+Train/Test Split
+      │
+      ▼
+Feature Scaling
+      │
+      ▼
+Data Leakage Validation
+      │
+      ▼
+Professional Report Generation
+      │
+      ▼
+Ready for Machine Learning
 ```
 
 ---
 
-## Quickstart
-
-Prepare your raw dataframe for model training in one simple step:
+## Example Output
 
 ```python
-import pandas as pd
 from akdata import ak
 
-# Load data safely
-df = ak.read_csv("dataset.csv")
+dataset = ak.read_csv("employees.csv")
 
-# Prepare, clean, profile, split, and validate end-to-end
 result = ak.prepare(
-    df,
-    target="Salary",
-    split_data=True,
-    test_size=0.2
+    dataset,
+    target="Salary"
 )
 
-# Train your scikit-learn or gradient-boosted models safely
+print(result.health_score)
+
+print(result.recommendations)
+
+result.summary()
+
+result.export_html()
+
+result.export_pdf()
+
 model.fit(result.X_train, result.y_train)
 ```
 
@@ -82,18 +140,183 @@ X_test_clean = pipeline.transform(X_test)
 
 ---
 
-## Development & Contributing
+## What AKDATA Automatically Does
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) to get started on submitting pull requests.
+✔ Detects missing values
 
-### Testing
-Run the comprehensive unit test suite:
+✔ Removes duplicates
+
+✔ Detects outliers
+
+✔ Converts incorrect data types
+
+✔ Encodes categorical columns
+
+✔ Generates new features
+
+✔ Selects useful features
+
+✔ Splits training and testing data
+
+✔ Scales numerical features
+
+✔ Prevents data leakage
+
+✔ Computes Dataset Health Score
+
+✔ Generates intelligent preprocessing recommendations
+
+✔ Produces professional HTML/PDF reports
+
+---
+
+## Roadmap
+
+### Version 1.0
+
+* Core preprocessing engine
+* Dataset Health Score
+* Recommendation Engine
+* HTML Reports
+* PDF Reports
+
+### Version 1.1
+
+* Time Series preprocessing
+* Feature importance reports
+
+### Version 2.0
+
+* Image dataset preprocessing
+* NLP dataset preprocessing
+* AutoML integration
+* Plugin architecture
+* CLI support
+
+```
+```
+
+---
+
+
+
+## Development
+
+AKDATA follows modern Python development practices and is designed to be maintainable, modular, and production-ready.
+
+Clone the repository:
+
+```bash
+git clone https://github.com/arikaranrs/AKDATA.git
+cd AKDATA
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate the environment:
+
+**Windows**
+
+```bash
+.venv\Scripts\activate
+```
+
+**Linux / macOS**
+
+```bash
+source .venv/bin/activate
+```
+
+Install the project in editable mode:
+
+```bash
+pip install -e .
+```
+
+Install development dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Running Tests
+
+Execute the complete unit test suite:
+
 ```bash
 pytest
 ```
+
+To view detailed test output:
+
+```bash
+pytest -v
+```
+
+---
+
+## Contributing
+
+Contributions are welcome.
+
+If you would like to improve AKDATA:
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Implement your changes.
+4. Add or update tests where appropriate.
+5. Submit a Pull Request.
+
+Please read **CONTRIBUTING.md** before submitting contributions.
+
+---
+
+## Roadmap
+
+### Current Version (v1.0)
+
+* Intelligent Data Preprocessing
+* Dataset Health Score
+* Intelligent Recommendation Engine
+* Data Leakage Detection
+* HTML Reports
+* PDF Reports
+* Modular Pipeline Architecture
+
+### Future Releases
+
+* Time Series Support
+* NLP Dataset Support
+* Image Dataset Support
+* AutoML Integration
+* Command Line Interface (CLI)
+* Plugin System
+* REST API
+* Interactive Dashboard
 
 ---
 
 ## License
 
-AKDATA is released under the [MIT License](LICENSE).
+This project is licensed under the **MIT License**.
+
+See the **LICENSE** file for complete license information.
+
+---
+
+## Author
+
+**Arikaran R**
+
+Creator and Maintainer of **AKDATA**
+
+* GitHub: https://github.com/arikaranrs
+* Email: [arikaranr2410@gmail.com](mailto:arikaranr2410@gmail.com)
+
+If you find AKDATA useful, consider giving the repository a ⭐ on GitHub and contributing to its future development.
