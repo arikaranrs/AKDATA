@@ -5,9 +5,19 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "akdata"
 version = "1.0.0"
+description = "Enterprise-grade intelligent data preprocessing framework for machine learning."
+
 authors = [
-    { name = "AKDATA Contributors" }
+    { name = "Arikaran R", email = "arikaranr2410@gmail.com" }
 ]
+
+license = { file = "LICENSE" }
+
+readme = "README.md"
+
+requires-python = ">=3.10,<3.14"
+]
+
 description = "An enterprise-grade, production-quality Python library for intelligent data preprocessing."
 readme = "README.md"
 requires-python = ">=3.10"
