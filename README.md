@@ -30,6 +30,10 @@ AKDATA automates this process while maintaining transparency, reproducibility, a
 Instead of manually writing preprocessing code for every dataset, developers can prepare datasets using a single, consistent workflow.
 
 ---
+📂 **Proof Script**
+
+[`mytest/mytest.py`](./mytest/mytest.py)   ← Blue hyperlink]
+---
 
 ## AKDATA Workflow
 
